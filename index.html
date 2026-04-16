@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MJ STUDIO Interior Design</title>
+    <meta
+      name="description"
+      content="MJ STUDIO Interior Design in Mauritius — interior design plans, project management, renovation guidance, and execution support from concept to reality."
+    />
+    <style>
+      :root {
+        --bg: #e7e4db;
+        --bg-soft: #efebe1;
+        --card: #f5f2ea;
+        --line: #d0cab9;
+        --text: #7b7a58;
+        --text-soft: #8c8a6b;
+        --accent: #9d9876;
+        --accent-dark: #7f7b5a;
+        --white: #ffffff;
+        --shadow: 0 16px 40px rgba(123, 122, 88, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(231, 228, 219, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        border: 1px solid var(--accent);
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+      }
+
+      .brand-text strong {
+        display: block;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        font-size: 0.92rem;
+      }
+
+      .brand-text span {
+        font-size: 0.85rem;
+        color: var(--text-soft);
+      }
+
+      .nav {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        font-size: 0.95rem;
+        transition: opacity 0.2s ease;
+      }
+
+      .nav a:hover {
+        opacity: 0.65;
+      }
+
+      .hero {
+        padding: 84px 0 64px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 0.82rem;
+        color: var(--text-soft);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 300;
+        line-height: 1.15;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        max-width: 620px;
+      }
+
+      .hero p.lead {
+        margin: 24px 0 0;
+        max-width: 560px;
+        font-size: 1.06rem;
+        color: var(--text-soft);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 32px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 999px;
+        border: 1px solid var(--accent);
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+      }
+
+      .btn.primary {
+        background: var(--accent-dark);
+        color: var(--white);
+      }
+
+      .btn.primary:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+      }
+
+      .btn.secondary:hover {
+        background: var(--accent-dark);
+        color: var(--white);
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, #ded9cb 0%, #ebe6da 100%);
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card img {
+        border-radius: 26px;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        background: #ddd7c8;
+      }
+
+      .hero-note {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .mini-card {
+        background: rgba(255, 255, 255, 0.35);
+        border: 1px solid rgba(123, 122, 88, 0.1);
+        border-radius: 24px;
+        padding: 18px;
+      }
+
+      .mini-card span {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        font-size: 0.72rem;
+        margin-bottom: 8px;
+      }
+
+      section {
+        padding: 82px 0;
+      }
+
+      .section-soft {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-heading {
+        max-width: 720px;
+        margin-bottom: 42px;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        margin-top: 12px;
+      }
+
+      .section-copy {
+        color: var(--text-soft);
+        font-size: 1.03rem;
+        max-width: 680px;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .card-grid,
+      .projects-grid,
+      .contact-grid {
+        display: grid;
+        gap: 22px;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: start;
+      }
+
+      .card,
+      .project-card,
+      .contact-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 30px;
+        padding: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .service-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 1px solid var(--accent);
+        margin-bottom: 20px;
+      }
+
+      .card h3,
+      .project-card h3,
+      .contact-card h3 {
+        font-size: 1.5rem;
+      }
+
+      .card p,
+      .project-card p,
+      .contact-card p,
+      .about-grid p {
+        color: var(--text-soft);
+      }
+
+      .project-image {
+        overflow: hidden;
+        border-radius: 24px;
+        margin-bottom: 18px;
+      }
+
+      .project-image img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 20px;
+      }
+
+      .contact-item small {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+        font-size: 0.72rem;
+        color: var(--text-soft);
+        margin-bottom: 6px;
+      }
+
+      .footer {
+        padding: 28px 0 38px;
+        border-top: 1px solid var(--line);
+        text-align: center;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .about-grid,
+        .contact-grid,
+        .card-grid,
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .header-inner,
+        .hero-grid,
+        .about-grid,
+        .contact-grid,
+        .card-grid,
+        .projects-grid,
+        .hero-note {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .header-inner {
+          gap: 18px;
+        }
+
+        .nav {
+          gap: 14px;
+        }
+
+        .hero {
+          padding-top: 56px;
+        }
+
+        .btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#home" class="brand" aria-label="MJ Studio home">
+          <div class="brand-mark">MJ</div>
+          <div class="brand-text">
+            <strong>MJ STUDIO</strong>
+            <span>Interior Design</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">From concept to reality</p>
+            <h1>Minimal interior design with thoughtful execution.</h1>
+            <p class="lead">
+              MJ STUDIO creates stylish, functional, and budget-friendly interiors for homes,
+              offices, and commercial spaces in Mauritius.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="https://wa.me/23057729661" target="_blank" rel="noopener noreferrer">Start on WhatsApp</a>
+              <a class="btn secondary" href="https://www.instagram.com/mj__studio_design/" target="_blank" rel="noopener noreferrer">View Instagram</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <img src="assets/logo.jpg" alt="MJ STUDIO Interior Design logo" />
+            <div class="hero-note">
+              <div class="mini-card">
+                <span>Design</span>
+                Clean concepts tailored to your space.
+              </div>
+              <div class="mini-card">
+                <span>Execution</span>
+                Trusted delivery through Dreamora Contracting.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section-soft">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">About MJ Studio</p>
+            <h2>Creative planning. Practical execution. One clear vision.</h2>
+          </div>
+
+          <div class="about-grid">
+            <p>
+              MJ STUDIO specializes in the conception of plans, interior design, renovation, and
+              the creation of unique spaces. The mission is simple: transform ideas into reality
+              with seriousness, creativity, and attention to detail.
+            </p>
+            <p>
+              The studio also operates with two dedicated departments: a drawing department for
+              custom plans and design work, and Dreamora Contracting, a trusted team ready to
+              bring each project to life from idea to execution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Services</p>
+            <h2>What MJ STUDIO can do for you</h2>
+            <p class="section-copy">
+              From concept sketches to project execution, every service is built to keep the
+              process clear, functional, and aesthetically refined.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="card">
+              <div class="service-icon"></div>
+              <h3>Interior Design Plan</h3>
+              <p>Custom design plans shaped around your space, taste, and practical needs.</p>
+            </article>
+
+            <article class="card">
+              <div class="service-icon"></div>
+              <h3>Project Management</h3>
+              <p>Structured coordination to keep your interior or renovation project moving smoothly.</p>
+            </article>
+
+            <article class="card">
+              <div class="service-icon"></div>
+              <h3>Material Estimate</h3>
+              <p>Thoughtful execution planning with material guidance for realistic decision-making.</p>
+            </article>
+
+            <article class="card">
+              <div class="service-icon"></div>
+              <h3>Execution Contractors</h3>
+              <p>Reliable support through Dreamora Contracting for professional on-site execution.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-soft">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Spaces</p>
+            <h2>Clean, modern spaces with a calm visual identity.</h2>
+            <p class="section-copy">
+              This first version uses sample project areas already featured in the brand material.
+              These cards can later be replaced with real project photography and case studies.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-image">
+                <img src="assets/project-1.jpg" alt="Hotel coffee bar project by MJ Studio" />
+              </div>
+              <h3>Hotel Coffee Bar</h3>
+              <p>Warm hospitality spaces designed to balance comfort, flow, and atmosphere.</p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">
+                <img src="assets/project-2.jpg" alt="Open space house project by MJ Studio" />
+              </div>
+              <h3>Open Space House</h3>
+              <p>Minimal residential layouts focused on openness, function, and timeless design.</p>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image">
+                <img src="assets/project-3.jpg" alt="Office reception area project by MJ Studio" />
+              </div>
+              <h3>Office Reception Area</h3>
+              <p>Refined professional spaces that create a strong and welcoming first impression.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-grid">
+          <div class="contact-card">
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s create your space.</h2>
+            <p class="section-copy">
+              Based in Mauritius, MJ STUDIO supports clients from the first concept discussion to
+              final execution. Reach out and start your project.
+            </p>
+            <div class="hero-actions" style="margin-top: 28px;">
+              <a class="btn primary" href="https://wa.me/23057729661" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+              <a class="btn secondary" href="mailto:modernjjourney@gmail.com">Send an Email</a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Contact Details</h3>
+            <div class="contact-list">
+              <div class="contact-item">
+                <small>Phone</small>
+                <a href="tel:+23057729661">57729661</a>
+              </div>
+              <div class="contact-item">
+                <small>Additional Numbers</small>
+                <span>57122261 / 59000628</span>
+              </div>
+              <div class="contact-item">
+                <small>Email</small>
+                <a href="mailto:modernjjourney@gmail.com">modernjjourney@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <small>Instagram</small>
+                <a href="https://www.instagram.com/mj__studio_design/" target="_blank" rel="noopener noreferrer">@mj__studio_design</a>
+              </div>
+              <div class="contact-item">
+                <small>Location</small>
+                <span>Mauritius</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">MJ STUDIO — From concept to reality.</div>
+    </footer>
+  </body>
+</html>
